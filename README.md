@@ -26,9 +26,7 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 - **Execute**: 
 
-  Put your input csv file into `~/symbolic-beat-tracking/input/`, and execute the make command. 
-  
-  Thus, you can check the beat tracking result in `~/symbolic-beat-tracking/output/`. The tracking result is a txt file, contains the beat positions in second. 
+  Put your input csv file into `~/symbolic-beat-tracking/input/`, and execute the make command.<br>Thus, you can check the beat tracking result in `~/symbolic-beat-tracking/output/`. The tracking result is a txt file, contains the beat positions in second. 
   
   ```
   $ make
