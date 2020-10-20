@@ -6,7 +6,7 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 ## Network Structure
 
-
+![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.PNG?raw=true)
 
 
 
