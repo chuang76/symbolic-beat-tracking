@@ -48,4 +48,5 @@ ax_p.xaxis.set_tick_params(pad=12)
 ax_p.set_xticks(np.arange(0.0, 1201, 600))
 plt.xlabel('time (sec)')
 
-plt.savefig("./figure/result.png")
+# plt.savefig("./figure/result.png")
+plt.show()

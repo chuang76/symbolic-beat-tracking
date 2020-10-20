@@ -2,11 +2,13 @@
 
 In this project, we construct a symbolic beat tracking framework that performs joint beat and downbeat tracking in a multi-task learning (MTL) manner. The proposed models are based on recurrent neural networks (RNN), namely bidirectional long short-term memory (BLSTM) network, hierarchical multi-scale (HM) LSTM, and BLSTM with the attention mechanism.
 
+![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/test.png?raw=true)
+
 
 
 ## Network Structure
 
-![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.PNG?raw=true)
+![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.png?raw=true)
 
 
 
@@ -43,13 +45,6 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 For example, there is an example file `test.csv` in the input folder. You can check its beat/downbeat tracking results with our proposed networks as follows. 
 
-A simple visualization file `plot.py` is provided, you can modify it according to your needs. 
-
-
-
-
-
-
-
+![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/proc.png?raw=true)
 
 
