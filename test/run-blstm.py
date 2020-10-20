@@ -61,20 +61,19 @@ class Model(nn.Module):
 
 def main():
 
+    print('Caculate BLSTM results.')
+    
     file_list = np.sort(glob.glob('./input/npz/*.npz', recursive=True)).tolist() 
-
-    print('[Info] Load the model...')
     model = Model(input_dim, hidden_dim, beat_dim, downbeat_dim)
     model = model.to(device)
     checkpoint = torch.load('./models/BLSTM.pkl')
     model.load_state_dict(checkpoint['model_state_dict'])
-
-    print('[Info] Start calculating...')
+    
     for file_idx in range(len(file_list)):
 
         # create a folder to store frames
         name = file_list[file_idx].split('/')[3].split('.')[0]
-        directory = './tmp/' + str(name)
+        directory = './tmp/blstm/' + str(name)
         if not os.path.exists(directory):
             os.makedirs(directory)     
 
@@ -91,11 +90,11 @@ def main():
             b, d = model.forward(x)
             b, d = b.cpu().detach().numpy(), d.cpu().detach().numpy()
 
-            with open('./tmp/' + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
+            with open('./tmp/blstm/' + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
                 pickle.dump([b, d], fp)
 
         # output 
-        tmp_list = np.sort(glob.glob('./tmp/' + str(name) + '/*.npz', recursive=True)).tolist() 
+        tmp_list = np.sort(glob.glob('./tmp/blstm/' + str(name) + '/*.npz', recursive=True)).tolist() 
         b_arr, d_arr = [], []
         for idx in range(len(tmp_list)):
             with open(tmp_list[idx], 'rb') as f:
@@ -106,7 +105,7 @@ def main():
         beat, downbeat = np.concatenate(b_arr), np.concatenate(d_arr)
         beat, downbeat = beat.reshape(-1, 1), downbeat.reshape(-1, 1)
 
-        with open('./output/' + str(name) + '.npz', 'wb') as f:
+        with open('./tmp/blstm/' + str(name) + '.npz', 'wb') as f:
             pickle.dump([beat, downbeat], f) 
 
 

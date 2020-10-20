@@ -64,12 +64,6 @@ def main():
         new.to_csv('./input/raw/' + str(name))
     
 
-
-    # for each songs 
-    # for file_idx in range(len(file_list)):
-
-        # load data and get filename
-        # name = file_list[file_idx].split('/')[2].split('.')[0] + '.npz'
         X = pd.read_csv('./input/raw/' + str(name))
         Yb, Yd = pd.DataFrame(X, columns=['beat']).to_numpy(), pd.DataFrame(X, columns=['downbeat']).to_numpy()
         X = X.drop(['beat', 'downbeat', 'Unnamed: 0'], axis=1).to_numpy()   
@@ -111,22 +105,6 @@ def main():
         name = name.split('.')[0] + '.npz'
         with open('./input/npz/' + str(name), 'wb') as f:
             pickle.dump([X_frames, Yb_frames, Yd_frames], f)
-
-    # pack all the input npz files into a large file
-    # npz_list = np.sort(glob.glob('./input/*.npz')).tolist()
-
-    # X_data, Yb_data, Yd_data = [], [], []
-
-    # for idx in range(len(npz_list)):
-    #     with open(npz_list[idx], 'rb') as f:
-    #         data = pickle.load(f)
-    #         X_data.append(data[0])
-    #         Yb_data.append(data[1])
-    #         Yd_data.append(data[2])
-    # X, Yb, Yd = np.concatenate(X_data), np.concatenate(Yb_data), np.concatenate(Yd_data)
-
-    # with open('./input/testing_dataset.npz', 'wb') as f:
-    #     pickle.dump([X, Yb, Yd], f, protocol=4)
 
 
 if __name__ == '__main__':
