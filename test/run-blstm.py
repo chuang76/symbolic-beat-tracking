@@ -68,12 +68,14 @@ def main():
     model = model.to(device)
     checkpoint = torch.load('./models/BLSTM.pkl')
     model.load_state_dict(checkpoint['model_state_dict'])
+
+    s = './output/tmp/blstm/'
     
     for file_idx in range(len(file_list)):
 
         # create a folder to store frames
         name = file_list[file_idx].split('/')[3].split('.')[0]
-        directory = './tmp/blstm/' + str(name)
+        directory = s + str(name)
         if not os.path.exists(directory):
             os.makedirs(directory)     
 
@@ -90,11 +92,11 @@ def main():
             b, d = model.forward(x)
             b, d = b.cpu().detach().numpy(), d.cpu().detach().numpy()
 
-            with open('./tmp/blstm/' + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
+            with open(s + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
                 pickle.dump([b, d], fp)
 
         # output 
-        tmp_list = np.sort(glob.glob('./tmp/blstm/' + str(name) + '/*.npz', recursive=True)).tolist() 
+        tmp_list = np.sort(glob.glob(s + str(name) + '/*.npz', recursive=True)).tolist() 
         b_arr, d_arr = [], []
         for idx in range(len(tmp_list)):
             with open(tmp_list[idx], 'rb') as f:
@@ -105,7 +107,7 @@ def main():
         beat, downbeat = np.concatenate(b_arr), np.concatenate(d_arr)
         beat, downbeat = beat.reshape(-1, 1), downbeat.reshape(-1, 1)
 
-        with open('./tmp/blstm/' + str(name) + '.npz', 'wb') as f:
+        with open(s + str(name) + '.npz', 'wb') as f:
             pickle.dump([beat, downbeat], f) 
 
 

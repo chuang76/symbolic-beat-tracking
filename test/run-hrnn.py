@@ -193,13 +193,15 @@ def main():
     checkpoint = torch.load('./models/HMLSTM.pkl')
     model.load_state_dict(checkpoint['model_state_dict'])
 
+    s = './output/tmp/hrnn/'
+
     for file_idx in range(len(file_list)):
 
         name = file_list[file_idx].split('/')[3].split('.')[0]
 
         # create a folder to store frames
         name = file_list[file_idx].split('/')[3].split('.')[0]
-        directory = './tmp/hrnn/' + str(name)
+        directory = s + str(name)
         if not os.path.exists(directory):
             os.makedirs(directory)     
 
@@ -229,11 +231,11 @@ def main():
             hidden = repackage_hidden(hidden)
             b, d = b.cpu().detach().numpy(), d.cpu().detach().numpy()
 
-            with open('./tmp/hrnn/' + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
+            with open(s + str(name) + '/' + str(idx) + '_unit.npz', 'wb') as fp:
                 pickle.dump([b, d], fp)
 
         # output 
-        tmp_list = np.sort(glob.glob('./tmp/hrnn/' + str(name) + '/*.npz', recursive=True)).tolist() 
+        tmp_list = np.sort(glob.glob(s + str(name) + '/*.npz', recursive=True)).tolist() 
         b_arr, d_arr = [], []
         for idx in range(len(tmp_list)):
             with open(tmp_list[idx], 'rb') as f:
@@ -244,7 +246,7 @@ def main():
         beat, downbeat = np.concatenate(b_arr), np.concatenate(d_arr)
         beat, downbeat = beat.reshape(-1, 1), downbeat.reshape(-1, 1)
 
-        with open('./tmp/hrnn/' + str(name) + '.npz', 'wb') as f:
+        with open(s + str(name) + '.npz', 'wb') as f:
             pickle.dump([beat, downbeat], f) 
 
 if __name__ == '__main__':

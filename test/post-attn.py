@@ -4,11 +4,11 @@ import numpy as np
 import pickle 
 
 beat_thres, db_thres = 0.3, 0.2
-file_list = np.sort(glob.glob('./tmp/attn/*.npz', recursive=True)).tolist() 
+file_list = np.sort(glob.glob('./output/tmp/attn/*.npz', recursive=True)).tolist() 
 
 for file_idx in range(len(file_list)):
 
-    name = file_list[file_idx].split('/')[3].split('.')[0]
+    name = file_list[file_idx].split('/')[4].split('.')[0]
 
     with open(file_list[file_idx], 'rb') as f: 
         data = pickle.load(f)
