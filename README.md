@@ -10,6 +10,13 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 
 
+## Environment
+
+- Ubuntu 18.04
+- Python 3.6.8
+
+
+
 ## Usage 
 
 - **Get a copy**: Get a copy of this project by running the git clone command. 
@@ -24,22 +31,19 @@ In this project, we construct a symbolic beat tracking framework that performs j
   $ pip install -r requirements.txt
   ```
 
-- **Execute**: 
+- **Execute**: Put your input csv file into `~/symbolic-beat-tracking/input/`, and execute the make command. Therefore, you can check the beat and downbeat tracking results in `~/symbolic-beat-tracking/output/`. The tracking results are text files, contains the beat and downbeat positions in second unit. 
 
-  Put your input csv file into `~/symbolic-beat-tracking/input/`, and execute the make command.<br>Thus, you can check the beat tracking result in `~/symbolic-beat-tracking/output/`. The tracking result is a txt file, contains the beat positions in second. 
-  
   ```
   $ make
   ```
-  
 
 
 
 ## Example
 
-There is an example file `test.csv` in the input folder. Let's check its beat tracking result with our proposed network.
+For example, there is an example file `test.csv` in the input folder. You can check its beat/downbeat tracking results with our proposed networks as follows. 
 
- 
+A simple visualization file `plot.py` is provided, you can modify it according to your needs. 
 
 
 
