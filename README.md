@@ -4,20 +4,20 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/test.png?raw=true)
 
-
+<br>
 
 ## Network Structure
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.png?raw=true)
 
-
+<br>
 
 ## Environment
 
 - Ubuntu 18.04
 - Python 3.6.8
 
-
+<br>
 
 ## Usage 
 
@@ -35,7 +35,7 @@ In this project, we construct a symbolic beat tracking framework that performs j
 
 - **Run**: 
 
-  - Input: Put your symbolic music input files into `~/symbolic-beat-tracking/input/`. The input file should be in csv format, which stores 5 columns of note event information, namely "start_time", "end_time", "instrument", "note" (i.e. pitch), and "note_value". <br>Here, "start_time" and "end_time" represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can obtain symbolic music data directly from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset or derive note event information with the [pretty_midi](https://craffel.github.io/pretty-midi/#pretty-midi-prettymidi) library. 
+  - Input: Put your symbolic music input files into `~/symbolic-beat-tracking/input/`. The input file should be in csv format, which stores 5 columns of note event information, namely "start_time", "end_time", "instrument", "note" (i.e. pitch), and "note_value". <br>Here, start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can obtain symbolic music data directly from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset or derive note event information with the [pretty_midi](https://craffel.github.io/pretty-midi/#pretty-midi-prettymidi) library. 
   
     |      | **start_time** | **end_time** | instrument | **note** | **note_value** |
     | ---- | -------------- | ------------ | ---------- | -------- | -------------- |
@@ -45,11 +45,11 @@ In this project, we construct a symbolic beat tracking framework that performs j
   
   - Output: Execute the make command, then you can check the beat and downbeat tracking results in `~/symbolic-beat-tracking/output/`. The tracking results contain the beat and downbeat positions in second unit. 
   
-    ```
-    $ make
-    ```
+  ```
+  $ make
+  ```
 
-
+<br>
 
 ## Example
 
