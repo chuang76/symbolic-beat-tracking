@@ -24,8 +24,14 @@ for file_idx in range(len(file_list)):
         if d[i] >= db_thres:
             d_out.append(str(np.round(float(i) * 0.01, 2)) + '\n')
 
+    s = './output/' + str(name) + '_beat_hrnn.txt'
+    if os.path.exists(s):
+        os.system("rm " + s)
     with open('./output/' + str(name) + '_beat_hrnn.txt', 'a') as fp:
         fp.writelines(b_out)
 
+    s = './output/' + str(name) + '_downbeat_hrnn.txt'
+    if os.path.exists(s):
+        os.system("rm " + s)
     with open('./output/' + str(name) + '_downbeat_hrnn.txt', 'a') as fp:
         fp.writelines(d_out)

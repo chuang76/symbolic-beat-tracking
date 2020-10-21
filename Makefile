@@ -16,3 +16,5 @@ run:
 
 clean:
 	@rm -r ./input/raw 
+	@rm -r ./input/npz 
+	@rm -r ./output/tmp 
