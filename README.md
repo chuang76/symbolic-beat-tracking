@@ -36,7 +36,7 @@ In this project, we construct a symbolic beat tracking system that performs join
 
 - **Run**: 
 
-  - Input: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>The input file should be in csv format, which stores 5 columns of note event information, namely "start_time", "end_time", "instrument", "note" (i.e. pitch), and "note_value". <br>Here, start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can get symbolic music data directly from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset or derive note event information with the [pretty_midi](https://craffel.github.io/pretty-midi/#pretty-midi-prettymidi) library. 
+  - Input: Put your symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>The input file should be in csv format, which stores 5 columns of note event information, namely "start_time", "end_time", "instrument", "note" (i.e. pitch), and "note_value". <br>Here, start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can get symbolic music data directly from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset or derive note event information with the [pretty_midi](https://craffel.github.io/pretty-midi/#pretty-midi-prettymidi) library. 
   
     |      | **start_time** | **end_time** | instrument | **note** | **note_value** |
     | ---- | -------------- | ------------ | ---------- | -------- | -------------- |

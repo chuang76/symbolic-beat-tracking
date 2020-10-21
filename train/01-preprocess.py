@@ -1,9 +1,6 @@
 import numpy as np
 import pandas as pd 
-import matplotlib.pyplot as plt
-import bisect 
 from scipy.interpolate import interp1d
-import copy
 import glob 
 
 file_list = np.sort(glob.glob('./MusicNet/*.csv', recursive=True)).tolist()
