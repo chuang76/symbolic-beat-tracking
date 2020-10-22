@@ -53,7 +53,7 @@ In this project, we construct a symbolic beat tracking system that performs join
 
 ## Example
 
-Here is a short example. There are two symbolic music data files `01.csv` and `02.csv` in the input folder. You can check their beat/downbeat tracking results with our networks as follows. 
+Here is a short example. There are two symbolic music data files `01.csv` and `02.csv` in the input folder. You can check their beat/downbeat tracking results as follows. 
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/proc.png?raw=true)
 

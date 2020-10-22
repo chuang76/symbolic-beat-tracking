@@ -110,7 +110,7 @@ class Model(nn.Module):
 
 def main():
 
-    print('Caculate BLSTM-Attn results.')
+    print('Calculate tracking results of BLSTM-Attn.')
 
     file_list = np.sort(glob.glob('./input/npz/*.npz', recursive=True)).tolist() 
     model = Model(input_dim, hidden_dim, beat_dim, downbeat_dim)

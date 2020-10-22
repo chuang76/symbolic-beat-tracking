@@ -183,7 +183,7 @@ class HM_Net(Module):
 
 def main():
 
-    print('Caculate HMLSTM results.')
+    print('Calculate tracking results of HMLSTM.')
     
     file_list = np.sort(glob.glob('./input/npz/*.npz', recursive=True)).tolist() 
     dict_size, embed_size = seq_len, input_size
