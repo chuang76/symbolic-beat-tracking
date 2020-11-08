@@ -14,7 +14,6 @@ for file_idx in range(len(file_list)):
             start = int(note.start * 44100)
             end = int(note.end * 44100)
             pitch = note.pitch
-            velocity = note.velocity
             midi_list.append([start, end, pitch])
 
     midi_list = sorted(midi_list, key=lambda x: (x[0], x[2]))
