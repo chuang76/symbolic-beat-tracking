@@ -62,7 +62,6 @@ def main():
 
         # write to file 
         new.to_csv('./input/raw/' + str(name))
-    
 
         X = pd.read_csv('./input/raw/' + str(name))
         Yb, Yd = pd.DataFrame(X, columns=['beat']).to_numpy(), pd.DataFrame(X, columns=['downbeat']).to_numpy()

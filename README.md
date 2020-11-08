@@ -1,6 +1,6 @@
 # Beat and Downbeat Tracking of Symbolic Music Data
 
-In this project, we construct a symbolic beat tracking system that performs joint beat and downbeat tracking in a multi-task learning (MTL) manner. The proposed models are based on recurrent neural networks (RNN), namely bidirectional long short-term memory (BLSTM) network, hierarchical multi-scale (HM) LSTM, and BLSTM with the attention mechanism. All three models are implemented with the [PyTorch](https://pytorch.org/) framework. 
+In this project, we construct a symbolic beat tracking system that performs joint beat and downbeat tracking in a multi-task learning (MTL) manner. The proposed models are based on variants of recurrent neural networks (RNN), All the models are implemented with the [PyTorch](https://pytorch.org/) framework. 
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/test.png?raw=true)
 
@@ -9,6 +9,8 @@ In this project, we construct a symbolic beat tracking system that performs join
 ## Network Structure
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.png?raw=true)
+
+In the network stage, we consider three types of neural networks: the first is the conventional bidirectional LSTM (BLSTM) network, the second is the Hierarchical Multiscale RNN (HM-RNN), and the third is the BLSTM with attention mechanism. For a more detailed discussion, please check our paper. 
 
 
 
@@ -21,40 +23,50 @@ In this project, we construct a symbolic beat tracking system that performs join
 
 ## Usage 
 
-- **Get a copy**: Get a copy of this project by running the git clone command. 
+- **Get a copy**: Get a copy of this project by cloning the Git repository. 
 
   ```
-  $ git clone https://github.com/chuang76/symbolic-beat-tracking.git
+  git clone https://github.com/chuang76/symbolic-beat-tracking.git
   ```
 
-- **Prerequisite**: Before running the project, you need to install all the dependencies from requirements.txt. 
+- **Prerequisite**: Install all the dependencies from requirements.txt. 
 
   ```
-  $ pip install -r requirements.txt
+  pip install -r requirements.txt
   ```
 
 - **Run**: 
 
-  - Input: Put your symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>The input file should be in csv format, which stores 5 columns of note event information, namely "start_time", "end_time", "instrument", "note" (i.e. pitch), and "note_value". <br>Here, start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data directly from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset or derive note event information with the [pretty_midi](https://craffel.github.io/pretty-midi/#pretty-midi-prettymidi) library. 
+  - **Input**: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>We provide two kinds of input format: MIDI file or csv file. The input features include "start_time", "end_time", and "note" (i.e. pitch). <br>If you choose to utilize csv file as input data, note that the start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data in csv format from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset. 
   
-    |      | **start_time** | **end_time** | instrument | **note** | **note_value** |
-    | ---- | -------------- | ------------ | ---------- | -------- | -------------- |
-    | 0    | 28126          | 29662        | 43         | 57       | Eighth         |
-    | 1    | 46557          | 52702        | 41         | 73       | Eighth         |
-    | 2    | 60893          | 109022       | 41         | 76       | Dotted Half    |
+    |      | **start_time** | **end_time** | **note** |
+    | ---- | -------------- | ------------ | -------- |
+    | 0    | 28126          | 29662        | 57       |
+    | 1    | 46557          | 52702        | 73       |
+    | 2    | 60893          | 109022       | 76       |
   
-  - Output: Simply execute the make command, then you can obtain the beat and downbeat tracking results in `~/symbolic-beat-tracking/output/`. The tracking results contain the beat and downbeat positions in seconds. 
+  - **Output:** Simply execute the make command, then you can obtain the beat and downbeat tracking results in `~/symbolic-beat-tracking/output/`. The tracking results contain the beat and downbeat positions in seconds. 
   
   ```
-  $ make
+  make
   ```
 
 
 
 ## Example
 
-Here is a short example. There are two symbolic music data files `01.csv` and `02.csv` in the input folder. You can check their beat/downbeat tracking results as follows. 
+Here is a short example. There are two symbolic music data files `01.csv` and `02.mid` in the input folder. You can check their beat/downbeat tracking results as follows. 
 
-![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/proc.png?raw=true)
+
+
+## Citation
+
+```
+
+```
+
+
+
+
 
 

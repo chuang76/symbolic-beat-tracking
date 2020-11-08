@@ -2,6 +2,7 @@ all: run clean
 
 run:
 	@echo "[Info] Pre-processing..."
+	@python ./test/midi2csv.py 
 	@python ./test/preprocess.py 
 
 	@echo "[Info] Running..."
