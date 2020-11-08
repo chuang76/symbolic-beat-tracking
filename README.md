@@ -10,7 +10,7 @@ In this project, we construct a symbolic beat tracking system that performs join
 
 ![](https://github.com/chuang76/symbolic-beat-tracking/blob/master/figure/network.png?raw=true)
 
-In the network stage, we consider three types of neural networks: the first is the conventional bidirectional LSTM (BLSTM) network, the second is the Hierarchical Multiscale RNN (HM-RNN), and the third is the BLSTM with attention mechanism. For a more detailed discussion, please check our paper. 
+In the network stage, we consider three types of neural networks: the first is the conventional bidirectional LSTM (BLSTM) network, the second is the Hierarchical Multiscale RNN (HM-RNN), and the third is the BLSTM with attention mechanism. For a more detailed discussion, please check our [paper](https://github.com/chuang76/symbolic-beat-tracking/blob/master/paper/Beat_Tracking_Symbolic_Music.pdf). 
 
 
 
@@ -37,7 +37,7 @@ In the network stage, we consider three types of neural networks: the first is t
 
 - **Run**: 
 
-  - **Input**: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>We provide two kinds of input format: MIDI file or csv file. The input features include "start_time", "end_time", and "note" (i.e. pitch). <br>If you choose to utilize csv file as input data, note that the start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data in csv format from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset. 
+  - **Input**: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>We provide two kinds of input format: MIDI file or csv file. The input features include "start_time", "end_time", and "note" (i.e. pitch). If you choose to utilize csv file as input data, note that the start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data in csv format from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset. 
   
     |      | **start_time** | **end_time** | **note** |
     | ---- | -------------- | ------------ | -------- |
@@ -57,13 +57,13 @@ In the network stage, we consider three types of neural networks: the first is t
 
 Here is a short example. There are two symbolic music data files `01.csv` and `02.mid` in the input folder. You can check their beat/downbeat tracking results as follows. 
 
+![](https://raw.githubusercontent.com/chuang76/symbolic-beat-tracking/master/figure/proc.png)
+
 
 
 ## Citation
 
-```
-
-```
+Yi-Chuang, Li Su, "Beat and Downbeat Tracking of Symbolic Music Data Using Deep Recurrent Neural Networks", Proceedings of Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC), December 2020. 
 
 
 
