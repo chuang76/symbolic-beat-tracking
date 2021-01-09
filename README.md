@@ -63,7 +63,7 @@ Here is a short example. There are two symbolic music data files `01.csv` and `0
 
 ## Citation
 
-Yi-Chuang, Li Su, "Beat and Downbeat Tracking of Symbolic Music Data Using Deep Recurrent Neural Networks", Proceedings of Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC), December 2020. 
+Yi-Chin Chuang, Li Su, "Beat and Downbeat Tracking of Symbolic Music Data Using Deep Recurrent Neural Networks", Proceedings of Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC), December 2020. 
 
 
 
