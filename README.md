@@ -37,7 +37,7 @@ In the network stage, we consider three types of neural networks: the first is t
 
 - **Run**: 
 
-  - **Input**: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>We provide two kinds of input format: MIDI file or csv file. The input features include "start_time", "end_time", and "note" (i.e. pitch). If you choose to utilize csv file as input data, note that the start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data in csv format from the [MusicNet](https://homes.cs.washington.edu/~thickstn/musicnet.html) dataset. 
+  - **Input**: Put the symbolic music input files into `~/symbolic-beat-tracking/input/`. <br>We provide two kinds of input format: MIDI file or csv file. The input features include "start_time", "end_time", and "note" (i.e. pitch). If you choose to utilize csv file as input data, note that the start_time and end_time represent (onset time * sampling rate) and (offset time * sampling rate), respectively. You can acquire symbolic music data in csv format from the MusicNet dataset. 
   
     |      | **start_time** | **end_time** | **note** |
     | ---- | -------------- | ------------ | -------- |
